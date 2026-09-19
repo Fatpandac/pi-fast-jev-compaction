@@ -18,7 +18,7 @@ Optional env vars:
 
 - `PI_FAST_JEV_MODEL` default `jev-latest`
 - `PI_FAST_JEV_BASE_URL`
-- `PI_FAST_JEV_KEEP_THRESHOLD` default `0.2` (library default 0.5 drops every tool call on pi sessions)
+- `PI_FAST_JEV_KEEP_THRESHOLD` default `0.5`
 - `PI_FAST_JEV_PRESERVE_RECENT_MESSAGES` default `6` (pins recent tool calls; 0 makes Jev drop everything)
 - `PI_FAST_JEV_MAX_STATE_TOKENS` default `25000`
 - `PI_FAST_JEV_MAX_REQUEST_TOKENS` default `30000`

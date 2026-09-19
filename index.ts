@@ -141,13 +141,7 @@ export async function compactPiMessagesForSummary(
   asker: JevAsker,
   options: FastJevOptions = {},
 ): Promise<FastJevSummaryResult> {
-  const result = await compact(piMessagesToJevMessages(piMessages), asker, {
-    ...options,
-    // ponytail: measured on real pi sessions, Jev scores top out near 0.5 with a
-    // ~0.2 median, so the library default of 0.5 drops every tool call. Re-measure
-    // if the Jev model changes.
-    keepThreshold: options.keepThreshold ?? 0.2,
-  });
+  const result = await compact(piMessagesToJevMessages(piMessages), asker, options);
   const ratio = reductionRatio(result);
   if (ratio < (options.minReductionRatio ?? 0.25)) {
     return { fallbackReason: 'below-min-reduction', ratio };
