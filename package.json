@@ -1,0 +1,8 @@
+{
+  "name": "pi-fast-jev-compaction-extension",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --import ./vendor/fast-jev-compaction/node_modules/tsx/dist/loader.mjs --test tests/*.test.ts"
+  }
+}

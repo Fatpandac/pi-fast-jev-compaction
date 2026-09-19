@@ -1,0 +1,3 @@
+[submodule "vendor/fast-jev-compaction"]
+	path = vendor/fast-jev-compaction
+	url = https://github.com/tamaratran/fast-jev-compaction.git
