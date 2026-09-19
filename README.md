@@ -25,3 +25,33 @@ Optional env vars:
 - `PI_FAST_JEV_MIN_REDUCTION_RATIO` default `0.25` (falls back to pi default below this)
 
 Reload pi with `/reload` after changing this extension.
+
+## Upstream
+
+`vendor/fast-jev-compaction` is a git submodule pinned to a specific upstream commit.
+It is never modified — all pi-specific behaviour lives in `index.ts`.
+
+Verify upstream is untouched:
+
+```sh
+git status --porcelain      # empty means upstream is clean
+git submodule status
+```
+
+Fresh clone / after pulling:
+
+```sh
+git submodule update --init
+cd vendor/fast-jev-compaction && npm install && npm run build
+```
+
+Bump upstream deliberately:
+
+```sh
+cd vendor/fast-jev-compaction
+git fetch && git checkout <new-commit> && npm install && npm run build
+cd ../.. && git add vendor/fast-jev-compaction && git commit -m "bump fast-jev-compaction"
+```
+
+Re-measure `keepThreshold` after a bump — the default is calibrated against Jev's score
+distribution, not an upstream constant.
