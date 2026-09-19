@@ -1,7 +1,8 @@
 # pi fast-jev-compaction
 
-Global pi extension that intercepts `session_before_compact` and uses the vendored
-`tamaratran/fast-jev-compaction` library instead of pi's default LLM summarizer.
+Global pi extension that intercepts `session_before_compact` and uses
+[`tamaratran/fast-jev-compaction`](https://github.com/tamaratran/fast-jev-compaction)
+as a git submodule instead of pi's default LLM summarizer.
 
 ## Config
 
@@ -55,3 +56,14 @@ cd ../.. && git add vendor/fast-jev-compaction && git commit -m "bump fast-jev-c
 
 Re-measure `keepThreshold` after a bump — the default is calibrated against Jev's score
 distribution, not an upstream constant.
+
+## Credits and license
+
+This is an independent pi adapter for
+[`tamaratran/fast-jev-compaction`](https://github.com/tamaratran/fast-jev-compaction).
+It is not affiliated with or endorsed by the upstream project.
+
+The upstream project is Copyright (c) 2025 and licensed under the
+[MIT License](vendor/fast-jev-compaction/LICENSE). Its source and complete license
+notice are preserved unchanged in the `vendor/fast-jev-compaction` submodule.
+All pi-specific integration code lives outside that submodule.
